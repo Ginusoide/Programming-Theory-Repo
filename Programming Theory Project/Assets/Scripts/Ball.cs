@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 {
     private float xRange = 6;
     private float ySpawnPos = 15.5f;
+    protected int scoreToAdd;
 
     // Start is called before the first frame update
     void Start()
