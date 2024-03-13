@@ -36,11 +36,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isGameActive)
         {
-            ChangePauseGame();
+            ChangePauseGame(); // ABSTRACTION
         }
 
         // Quando si gioca il timer diminuisce
-        CountDown(timerValue);
+        CountDown(timerValue); // ABSTRACTION
     }
 
     public void UpdateScore(int addScore)
