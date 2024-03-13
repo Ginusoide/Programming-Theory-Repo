@@ -22,14 +22,10 @@ public class GameManager : MonoBehaviour
     private int score;
     private float timer;
     private bool isPaused;
-    public float spawnRate = 1.0f; // public per test
+    private float spawnRate;
+
+    public float spawnRateTest = 1.0f; // public per test
     private Vector3 playerStartPos = new Vector3(0, 2, 0);
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -98,6 +94,7 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         isPaused = false;
         timer = timerValue;
+        spawnRate = spawnRateTest;
 
         // Lancio del gioco
         StartCoroutine(SpawnRandomBall());

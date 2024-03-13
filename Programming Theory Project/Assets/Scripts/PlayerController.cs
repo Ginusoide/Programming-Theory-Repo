@@ -45,16 +45,19 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bad"))
         {
-            gameManager.UpdateScore(-1);
+            //gameManager.UpdateScore(-1);
             badChestParticle.Play();
             audioPlayer.PlayOneShot(clipBad);
         }
         else
         {
-            gameManager.UpdateScore(1);
+            //gameManager.UpdateScore(1);
             goodChestParticle.Play();
             audioPlayer.PlayOneShot(clipGood);
         }
+
+        // Aggiorna il punteggio con Score
+        gameManager.UpdateScore(other.gameObject.GetComponent<Ball>().Score);
     }
 
     private void OnCollisionEnter(Collision collision)

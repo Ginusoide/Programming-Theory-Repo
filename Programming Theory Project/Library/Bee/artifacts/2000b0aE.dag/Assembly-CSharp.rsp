@@ -337,6 +337,7 @@
 "Assets/Scripts/BasketBall.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/SoccerBall.cs"
 -langversion:9.0
 
 /deterministic

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
+public abstract class Ball : MonoBehaviour
 {
+    public int Score { get; protected set; }
+
     private float xRange = 6;
     private float ySpawnPos = 15.5f;
-    protected int scoreToAdd;
+    private float lowLimit = -2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -2)
+        if (transform.position.y < lowLimit)
         {
             Destroy(gameObject);
         }

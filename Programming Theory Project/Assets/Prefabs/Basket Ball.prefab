@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6257930633714139375}
   - component: {fileID: 3026209964426959079}
   - component: {fileID: 5347997763907485808}
-  - component: {fileID: 5139927351568842265}
+  - component: {fileID: -9144474814199545773}
   m_Layer: 0
   m_Name: Basket Ball
   m_TagString: Untagged
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5139927351568842265
+--- !u!114 &-9144474814199545773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3350611363681313177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d9925e8a4e34283bc5281461cc5315, type: 3}
+  m_Script: {fileID: 11500000, guid: baf845fbcf54a442a8ecb9c2df65cad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

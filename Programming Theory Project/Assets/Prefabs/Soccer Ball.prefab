@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4332775350174414373}
   - component: {fileID: 7367320120534928931}
   - component: {fileID: 2262653832741803451}
-  - component: {fileID: 2415046213996015735}
+  - component: {fileID: 494757092209716397}
   m_Layer: 0
   m_Name: Soccer Ball
   m_TagString: Bad
@@ -94,7 +94,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735832971957693574}
-  m_Material: {fileID: 13400000, guid: 86842ba7777f54c6bb7fc57e081edf81, type: 2}
+  m_Material: {fileID: 13400000, guid: 94e70e802bab945ccb747cafc4b7816a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -104,10 +104,10 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.4650444
+  m_Center: {x: -0.001839757, y: -0.0073590577, z: 0}
 --- !u!54 &2262653832741803451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2415046213996015735
+--- !u!114 &494757092209716397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 735832971957693574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d9925e8a4e34283bc5281461cc5315, type: 3}
+  m_Script: {fileID: 11500000, guid: f096cfa7422134595a4c70c5ebea8fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4008390568307350205
@@ -197,6 +197,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703510533658948, guid: c771dc487345feb4aa9946a24d7d7713, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524607263232115943, guid: c771dc487345feb4aa9946a24d7d7713, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 524607263232115943, guid: c771dc487345feb4aa9946a24d7d7713, type: 3}
