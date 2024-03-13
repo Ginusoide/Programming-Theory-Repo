@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] List<GameObject> ballsPrefabs;
+    [SerializeField] List<GameObject> powerupPrefabs;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI gameOverText;
     [SerializeField] TextMeshProUGUI timerText;
@@ -102,6 +103,7 @@ public class GameManager : MonoBehaviour
 
         // Lancio del gioco
         StartCoroutine(SpawnRandomBall());
+        Invoke("SpawnPowerUp", 10);
         ResetScore();
 
         // Impostazione timer al tempo massimo della partita (60 secondi attualmente)
@@ -188,5 +190,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         IsTimerFreezed = false;
         timerText.color = Color.black;
+    }
+
+    void SpawnPowerUp()
+    {
+        Instantiate(powerupPrefabs[0]);
     }
 }
