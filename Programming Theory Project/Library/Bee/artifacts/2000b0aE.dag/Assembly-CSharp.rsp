@@ -335,8 +335,11 @@
 "Assets/Scenes/Counter.cs"
 "Assets/Scripts/Ball.cs"
 "Assets/Scripts/BasketBall.cs"
+"Assets/Scripts/FallingObject.cs"
+"Assets/Scripts/FreezeTime.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/PowerUp.cs"
 "Assets/Scripts/SoccerBall.cs"
 -langversion:9.0
 

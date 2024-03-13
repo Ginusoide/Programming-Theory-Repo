@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip clipBad;
     [SerializeField] AudioClip clipBorder;
     [SerializeField] float volumeClipBorder = 0.15f;
+
+    public bool hasPowerup = false;
+
     private AudioSource audioPlayer;
     private GameManager gameManager;
     private float horizontalAxis;
@@ -43,21 +46,29 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Bad"))
+        if (other.gameObject.CompareTag("PowerUp"))
         {
-            //gameManager.UpdateScore(-1);
-            badChestParticle.Play();
-            audioPlayer.PlayOneShot(clipBad);
+            other.gameObject.GetComponent<PowerUp>().ReleasePower();
+            hasPowerup = true;
+            Destroy(other.gameObject);
         }
         else
         {
-            //gameManager.UpdateScore(1);
-            goodChestParticle.Play();
-            audioPlayer.PlayOneShot(clipGood);
+            if (other.gameObject.CompareTag("Bad"))
+            {
+                //gameManager.UpdateScore(-1);
+                badChestParticle.Play();
+                audioPlayer.PlayOneShot(clipBad);
+            }
+            else
+            {
+                //gameManager.UpdateScore(1);
+                goodChestParticle.Play();
+                audioPlayer.PlayOneShot(clipGood);
+            }
+            // Aggiorna il punteggio con Score
+            gameManager.UpdateScore(other.gameObject.GetComponent<Ball>().Score);
         }
-
-        // Aggiorna il punteggio con Score
-        gameManager.UpdateScore(other.gameObject.GetComponent<Ball>().Score);
     }
 
     private void OnCollisionEnter(Collision collision)

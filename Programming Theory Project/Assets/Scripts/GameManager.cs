@@ -18,9 +18,12 @@ public class GameManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject gameOverScreen;
     public bool isGameActive;
-    
+
+    public bool IsTimerFreezed { get; private set; }
+
     private int score;
     private float timer;
+    
     private bool isPaused;
     private float spawnRate;
 
@@ -94,6 +97,7 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         isPaused = false;
         timer = timerValue;
+        IsTimerFreezed = false;
         spawnRate = spawnRateTest;
 
         // Lancio del gioco
@@ -139,19 +143,26 @@ public class GameManager : MonoBehaviour
         {
             if (timer > 0)
             {
-                timer -= Time.deltaTime;
-                // A 30 secondi mancanti aumento le palle generate
-                if (timer <= 30)
+                if (!IsTimerFreezed) // Countdown se non è attivo un powerup FreezeTime
                 {
-                    spawnRate = 0.8f;
-                    if (timer <= 20)
+                    timer -= Time.deltaTime;
+                    // A 30 secondi mancanti aumento le palle generate
+                    if (timer <= 30)
                     {
-                        spawnRate = 0.6f;
-                        if (timer <= 10)
+                        spawnRate = 0.8f;
+                        if (timer <= 20)
                         {
-                            spawnRate = 0.4f;
+                            spawnRate = 0.6f;
+                            if (timer <= 10)
+                            {
+                                spawnRate = 0.4f;
+                            }
                         }
                     }
+                }
+                else
+                {
+                    
                 }
             }
             else
@@ -162,5 +173,20 @@ public class GameManager : MonoBehaviour
             }
             timerText.text = Mathf.Round(timer).ToString();
         }
+    }
+
+    public void FreezeTimeFor(float time)
+    {
+        StartCoroutine(FreezeTimer(time));
+    }
+
+    IEnumerator FreezeTimer(float time)
+    {
+        IsTimerFreezed = true;
+        // Applica effetto al countdown in freeze
+        timerText.color = Color.blue;
+        yield return new WaitForSeconds(time);
+        IsTimerFreezed = false;
+        timerText.color = Color.black;
     }
 }

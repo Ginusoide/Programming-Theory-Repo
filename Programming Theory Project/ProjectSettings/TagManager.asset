@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Ram
   - Ball
   - Bad
+  - PowerUp
   layers:
   - Default
   - TransparentFX
